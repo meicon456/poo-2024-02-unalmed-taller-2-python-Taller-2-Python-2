@@ -31,10 +31,12 @@ class Auto:
   def cantidadAsientos(self):
     return sum(1 for asiento in self.asientos if isinstance(asiento, Asiento))
   def verificarIntegridad(self):
+    if self.motor.registro != self.registro:
+            return "Las piezas no son originales"
     registros = [asiento.registro for asiento in self.asientos if isinstance(asiento, Asiento)]
         
         
-  if all(registro == registros[0] for registro in registros):
-            return "Auto original"
+    if all(registro == registros[0] for registro in registros):
+      return "Auto original"
         
-  return "Las piezas no son originales"
+    return "Las piezas no son originales"
