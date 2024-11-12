@@ -34,6 +34,12 @@ class Auto:
     if self.motor.registro != self.registro:
         return "Las piezas no son originales"
 
-    if self.asientos.registro != self.registro:
-            return "Las piezas no son originales"
+    asiento_registros = set() 
+    for asiento in self.asientos:
+      if asiento is not None:
+        if asiento.registro != self.registro:
+          return "Las piezas no son originales"
+        asiento_registros.add(asiento.registro)
+    if len(asiento_registros) > 1: 
+      return "Las piezas no son originales"
     return "Auto original"
