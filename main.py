@@ -34,7 +34,7 @@ class Auto:
     registros = [asiento.registro for asiento in self.asientos if isinstance(asiento, Asiento)]
         
         
-        if all(registro == registros[0] for registro in registros):
+  if all(registro == registros[0] for registro in registros):
             return "Auto original"
         
-        return "Las piezas no son originales"
+  return "Las piezas no son originales"
